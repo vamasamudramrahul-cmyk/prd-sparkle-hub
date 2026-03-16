@@ -14,7 +14,6 @@ const Hero = () => {
           alt="Bikers riding at sunset"
           className="w-full h-full object-cover object-center"
         />
-        {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
         <div className="absolute inset-0 bg-background/20" />
       </div>
@@ -36,17 +35,26 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="text-primary uppercase tracking-[0.3em] text-sm md:text-base font-body"
           >
-            Andhra Pradesh's Premier Biker Community
+            Where Riders Connect & Belong
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground text-cinematic"
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-foreground text-cinematic"
           >
-            BIKERGRAM
+            BIKERGRAM<br />ANDHRA PRADESH
           </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.65 }}
+            className="font-display text-2xl md:text-3xl text-primary"
+          >
+            Beyond the Road
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
@@ -54,8 +62,8 @@ const Hero = () => {
             transition={{ delay: 0.7 }}
             className="text-foreground/80 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
           >
-            Where passion meets the open road. Join the brotherhood of riders 
-            capturing cinematic moments across the stunning landscapes of Andhra Pradesh.
+            A community built for bikers and clubs to connect, ride together, 
+            and grow the spirit of motorcycling.
           </motion.p>
 
           <motion.div
@@ -75,8 +83,13 @@ const Hero = () => {
               </Button>
             </a>
             <Link to="/contact">
+              <Button variant="hero">
+                Join Community
+              </Button>
+            </Link>
+            <Link to="/contact">
               <Button variant="heroOutline">
-                Collaborate With Us
+                Submit Your Ride
               </Button>
             </Link>
           </motion.div>
