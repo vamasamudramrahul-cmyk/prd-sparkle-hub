@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import bikergramLogo from "@/assets/bikergram-logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,14 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand / Footer Logo */}
           <div className="space-y-4">
-            <div>
-              <h3 className="font-display text-4xl text-foreground">
-                BIKERGRAM
-              </h3>
-              <p className="font-display text-xl text-primary tracking-widest">
-                ANDHRA PRADESH
-              </p>
-            </div>
+            <img
+              src={bikergramLogo}
+              alt="Bikergram Andhra Pradesh"
+              className="h-12 w-auto"
+            />
             <p className="text-muted-foreground text-sm leading-relaxed tracking-wider">
               Beyond the Road, Where Bikers Belong
             </p>
