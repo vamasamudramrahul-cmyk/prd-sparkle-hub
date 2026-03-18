@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Send, Handshake } from "lucide-react";
+import { Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -25,9 +25,9 @@ const CTASection = () => {
             LET'S <span className="text-primary">COLLABORATE</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-6 leading-relaxed">
-            Are you a brand looking to reach the biker community? An event organizer 
-            planning something epic? Or a content creator wanting to join forces? 
-            We're always open to exciting collaborations.
+            Whether you're a riding club, brand, or content creator, join us in 
+            building a stronger biking community. Let's collaborate to create rides, 
+            stories, and experiences that bring bikers closer.
           </p>
 
           <motion.div
@@ -39,12 +39,11 @@ const CTASection = () => {
           >
             <Link to="/contact">
               <Button variant="hero">
-                <Send className="w-5 h-5" />
                 Get In Touch
               </Button>
             </Link>
             <a
-              href="https://instagram.com/bikergram_andrapradesh"
+              href="https://ig.me/m/bikergram_andrapradesh"
               target="_blank"
               rel="noopener noreferrer"
             >
