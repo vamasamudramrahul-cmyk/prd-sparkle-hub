@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import bikergramLogo from "@/assets/bikergram-logo.jpg";
 
 const Footer = () => {
   return (
