@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Youtube, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -16,9 +16,8 @@ const Footer = () => {
                 ANDHRA PRADESH
               </p>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Uniting motorcycle enthusiasts across Andhra Pradesh. 
-              Ride together, grow together.
+            <p className="text-muted-foreground text-sm leading-relaxed tracking-wider">
+              Beyond the Road, Where Bikers Belong
             </p>
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
               <MapPin className="w-4 h-4 text-primary" />
@@ -26,17 +25,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore Links */}
           <div className="space-y-4">
-            <h4 className="font-display text-xl text-foreground">QUICK LINKS</h4>
+            <h4 className="font-display text-xl text-foreground">EXPLORE</h4>
             <nav className="flex flex-col gap-2">
               {[
                 { name: "Home", path: "/" },
-                { name: "About Us", path: "/about" },
+                { name: "About", path: "/about" },
                 { name: "Biker Hub", path: "/gallery" },
                 { name: "Contact", path: "/contact" },
-                { name: "Join Community", path: "/contact" },
-                { name: "Submit Your Ride", path: "/contact" },
               ].map((link) => (
                 <Link
                   key={link.name}
@@ -57,28 +54,30 @@ const Footer = () => {
                 href="https://instagram.com/bikergram_andrapradesh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
-                aria-label="YouTube"
+                href="https://facebook.com/BikergramAndraPradesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all"
+                aria-label="Facebook"
               >
-                <Youtube className="w-5 h-5" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="mailto:bikergram.ap@gmail.com"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                href="mailto:bikergramandrapradesh@gmail.com"
+                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
               </a>
             </div>
             <p className="text-muted-foreground text-sm">
-              bikergram.ap@gmail.com
+              bikergramandrapradesh@gmail.com
             </p>
           </div>
         </div>
