@@ -46,27 +46,14 @@ const Header = () => {
         {/* Logo - acts as menu toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex items-center gap-1 group cursor-pointer"
+          className="group cursor-pointer hover:opacity-80 transition-opacity"
           aria-label="Toggle menu"
         >
-          <span className="font-display text-xl md:text-2xl text-foreground group-hover:text-primary transition-colors">
-            BIKERGRAM
-          </span>
-          <span className="font-display text-xl md:text-2xl text-primary">
-            _
-          </span>
-          <span className="font-display text-xs md:text-sm text-foreground group-hover:text-primary transition-colors">
-            A
-          </span>
-          <span className="font-display text-xs md:text-sm text-primary">
-            ⛓
-          </span>
-          <span className="font-display text-xs md:text-sm text-foreground group-hover:text-primary transition-colors">
-            DRA
-          </span>
-          <span className="font-display text-xs md:text-sm text-muted-foreground">
-            PRADESH
-          </span>
+          <img
+            src={bikergramLogo}
+            alt="Bikergram Andhra Pradesh"
+            className="h-8 md:h-10 w-auto"
+          />
         </button>
 
         {/* Desktop Navigation */}
