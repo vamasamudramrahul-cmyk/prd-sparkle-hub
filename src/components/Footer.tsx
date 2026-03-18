@@ -6,11 +6,16 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {/* Brand */}
+          {/* Brand / Footer Logo */}
           <div className="space-y-4">
-            <h3 className="font-display text-3xl text-foreground">
-              BIKERGRAM <span className="text-primary">AP</span>
-            </h3>
+            <div>
+              <h3 className="font-display text-4xl text-foreground">
+                BIKERGRAM
+              </h3>
+              <p className="font-display text-xl text-primary tracking-widest">
+                ANDHRA PRADESH
+              </p>
+            </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Uniting motorcycle enthusiasts across Andhra Pradesh. 
               Ride together, grow together.
@@ -28,11 +33,13 @@ const Footer = () => {
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
-                { name: "Gallery", path: "/gallery" },
+                { name: "Biker Hub", path: "/gallery" },
                 { name: "Contact", path: "/contact" },
+                { name: "Join Community", path: "/contact" },
+                { name: "Submit Your Ride", path: "/contact" },
               ].map((link) => (
                 <Link
-                  key={link.path}
+                  key={link.name}
                   to={link.path}
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
