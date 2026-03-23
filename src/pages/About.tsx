@@ -49,11 +49,10 @@ const About = () => {
                 Our Story
               </span>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground mt-2">
-                ABOUT <span className="text-primary">BIKERGRAM</span>
+                ABOUT <span className="text-primary">BIKERGRAM ANDHRA PRADESH</span>
               </h1>
               <p className="text-muted-foreground text-lg mt-6 leading-relaxed">
-                Born from the passion for motorcycles and the love for visual storytelling, 
-                Bikergram AP has grown into Andhra Pradesh's most vibrant biker content community.
+                Born from a passion for riding and the love for meaningful journeys.
               </p>
             </motion.div>
           </div>
