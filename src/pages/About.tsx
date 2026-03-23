@@ -9,22 +9,22 @@ const values = [
   {
     icon: Heart,
     title: "Passion",
-    description: "Every ride is fueled by our deep love for motorcycles and the freedom they represent.",
+    description: "A passion to connect riders through stories, experiences, and the spirit of the open road.",
   },
   {
     icon: Bike,
     title: "Brotherhood",
-    description: "More than a community—we're a family bound by the shared thrill of the open road.",
+    description: "A space where riders come together, share their journeys, and feel a sense of belonging beyond the road.",
   },
   {
     icon: Target,
     title: "Excellence",
-    description: "We strive for cinematic perfection in every piece of content we create.",
+    description: "Striving to create meaningful and helpful content that guides riders through real experiences and shared journeys.",
   },
   {
     icon: Eye,
     title: "Authenticity",
-    description: "Real stories, real rides, real emotions—no filters on our journey.",
+    description: "Real journeys, honest experiences, and genuine stories — shared to help and inspire every rider.",
   },
 ];
 
