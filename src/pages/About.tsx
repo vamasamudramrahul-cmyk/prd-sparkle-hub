@@ -117,9 +117,7 @@ const About = () => {
                 <Eye className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-display text-2xl text-foreground mb-3">OUR VISION</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become India's most recognized biker content platform, inspiring 
-                  millions to embrace the riding lifestyle while showcasing the beauty 
-                  of our nation's roads and communities.
+                  To become a space where riders feel at home, connect through journeys, and inspire each other beyond the road.
                 </p>
               </motion.div>
 
