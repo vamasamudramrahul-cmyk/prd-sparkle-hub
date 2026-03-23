@@ -83,23 +83,20 @@ const About = () => {
                 className="space-y-6"
               >
                 <h2 className="font-display text-3xl md:text-4xl text-foreground">
-                  FROM LOCAL RIDES TO <span className="text-primary">VIRAL REELS</span>
+                  ABOUT <span className="text-primary">BIKERGRAM ANDHRA PRADESH</span>
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    What started as a small group of motorcycle enthusiasts sharing 
-                    their weekend rides has evolved into a powerhouse of cinematic 
-                    biker content that resonates with thousands across India.
+                    What started as a passion for riding is now a platform where real experiences help others explore and ride better.
                   </p>
                   <p>
-                    Based in Andhra Pradesh, we capture the essence of biking culture—
-                    the roar of engines, the camaraderie of riders, and the breathtaking 
-                    landscapes that make every journey memorable.
+                    It brings riders and travelers together to share real experiences, discover places, and help others plan better journeys.
                   </p>
                   <p>
-                    Today, Bikergram AP stands as a digital identity for riders who 
-                    want to be part of something bigger than solo rides. We're building 
-                    a movement, one reel at a time.
+                    Every shared journey becomes a guide, helping others ride with more confidence, clarity, and purpose.
+                  </p>
+                  <p>
+                    Because for us, it's not just about the ride — it's about connection, contribution, and belonging beyond the road.
                   </p>
                 </div>
               </motion.div>
