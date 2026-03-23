@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-bikes.jpg";
@@ -63,7 +63,7 @@ const Hero = () => {
             className="text-foreground/80 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
           >
             A community built for bikers and clubs to connect, ride together, 
-            and grow the spirit of motorcycling.
+            and grow the spirit of Biking.
           </motion.p>
 
           <motion.div
@@ -78,7 +78,6 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <Button variant="hero">
-                <Instagram className="w-5 h-5" />
                 Follow Our Journey
               </Button>
             </a>

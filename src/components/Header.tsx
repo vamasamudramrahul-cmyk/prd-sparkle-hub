@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Search } from "lucide-react";
 import bikergramLogo from "@/assets/bikergram-logo.jpg";
 
 const navLinks = [
@@ -12,7 +11,7 @@ const navLinks = [
   { name: "Contact", path: "/contact" },
 ];
 
-const allSections = [
+const menuLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Biker Hub", path: "/gallery" },
@@ -34,7 +33,7 @@ const Header = () => {
     }
   }, [isSearchOpen]);
 
-  const filteredSections = allSections.filter((s) =>
+  const filteredSections = menuLinks.filter((s) =>
     s.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -43,22 +42,17 @@ const Header = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 to-transparent backdrop-blur-sm" />
 
       <nav className="relative container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo - acts as menu toggle */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="group cursor-pointer hover:opacity-80 transition-opacity"
-          aria-label="Toggle menu"
-        >
+        {/* Logo */}
+        <Link to="/" className="hover:opacity-80 transition-opacity">
           <img
             src={bikergramLogo}
             alt="Bikergram Andhra Pradesh"
             className="h-8 md:h-10 w-auto"
           />
-        </button>
+        </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation: 🔍 Home About Biker Hub Contact ☰ */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Search */}
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className="text-foreground/70 hover:text-foreground transition-colors"
@@ -81,19 +75,16 @@ const Header = () => {
             </Link>
           ))}
 
-          <a
-            href="https://instagram.com/bikergram_andrapradesh"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            className="text-foreground/70 hover:text-foreground transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <Button variant="outline" size="sm">
-              <Instagram className="w-4 h-4" />
-              Follow
-            </Button>
-          </a>
+            <Menu size={24} />
+          </button>
         </div>
 
-        {/* Mobile: search + menu toggle */}
+        {/* Mobile: search + hamburger */}
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -160,7 +151,6 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <>
-              {/* Backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -168,7 +158,6 @@ const Header = () => {
                 className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
                 onClick={() => setIsMenuOpen(false)}
               />
-              {/* Slide Panel */}
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: 0 }}
@@ -190,6 +179,20 @@ const Header = () => {
                 </div>
 
                 <div className="flex flex-col p-6 gap-4">
+                  {/* Search in menu */}
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsSearchOpen(true);
+                    }}
+                    className="flex items-center gap-2 font-display text-lg text-foreground/70 hover:text-primary transition-colors"
+                  >
+                    <Search className="w-5 h-5" />
+                    Search
+                  </button>
+
+                  <div className="border-t border-border my-1" />
+
                   {navLinks.map((link, index) => (
                     <motion.div
                       key={link.path}
@@ -240,21 +243,6 @@ const Header = () => {
                       Submit Your Ride
                     </Link>
                   </motion.div>
-
-                  <motion.a
-                    href="https://instagram.com/bikergram_andrapradesh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="mt-4"
-                  >
-                    <Button variant="default" className="w-full">
-                      <Instagram className="w-5 h-5" />
-                      Follow on Instagram
-                    </Button>
-                  </motion.a>
                 </div>
               </motion.div>
             </>
