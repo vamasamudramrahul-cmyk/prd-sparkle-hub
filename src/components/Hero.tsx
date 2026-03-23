@@ -63,7 +63,7 @@ const Hero = () => {
             className="text-foreground/80 text-lg md:text-xl max-w-2xl mx-auto font-body leading-relaxed"
           >
             A community built for bikers and clubs to connect, ride together, 
-            and grow the spirit of motorcycling.
+            and grow the spirit of Biking.
           </motion.p>
 
           <motion.div
