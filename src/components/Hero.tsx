@@ -78,7 +78,6 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <Button variant="hero">
-                <Instagram className="w-5 h-5" />
                 Follow Our Journey
               </Button>
             </a>
