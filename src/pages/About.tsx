@@ -9,22 +9,22 @@ const values = [
   {
     icon: Heart,
     title: "Passion",
-    description: "Every ride is fueled by our deep love for motorcycles and the freedom they represent.",
+    description: "A passion to connect riders through stories, experiences, and the spirit of the open road.",
   },
   {
     icon: Bike,
     title: "Brotherhood",
-    description: "More than a community—we're a family bound by the shared thrill of the open road.",
+    description: "A space where riders come together, share their journeys, and feel a sense of belonging beyond the road.",
   },
   {
     icon: Target,
     title: "Excellence",
-    description: "We strive for cinematic perfection in every piece of content we create.",
+    description: "Striving to create meaningful and helpful content that guides riders through real experiences and shared journeys.",
   },
   {
     icon: Eye,
     title: "Authenticity",
-    description: "Real stories, real rides, real emotions—no filters on our journey.",
+    description: "Real journeys, honest experiences, and genuine stories — shared to help and inspire every rider.",
   },
 ];
 
@@ -49,11 +49,10 @@ const About = () => {
                 Our Story
               </span>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground mt-2">
-                ABOUT <span className="text-primary">BIKERGRAM</span>
+                ABOUT <span className="text-primary">BIKERGRAM ANDHRA PRADESH</span>
               </h1>
               <p className="text-muted-foreground text-lg mt-6 leading-relaxed">
-                Born from the passion for motorcycles and the love for visual storytelling, 
-                Bikergram AP has grown into Andhra Pradesh's most vibrant biker content community.
+                Born from a passion for riding and the love for meaningful journeys.
               </p>
             </motion.div>
           </div>
@@ -84,23 +83,20 @@ const About = () => {
                 className="space-y-6"
               >
                 <h2 className="font-display text-3xl md:text-4xl text-foreground">
-                  FROM LOCAL RIDES TO <span className="text-primary">VIRAL REELS</span>
+                  ABOUT <span className="text-primary">BIKERGRAM ANDHRA PRADESH</span>
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    What started as a small group of motorcycle enthusiasts sharing 
-                    their weekend rides has evolved into a powerhouse of cinematic 
-                    biker content that resonates with thousands across India.
+                    What started as a passion for riding is now a platform where real experiences help others explore and ride better.
                   </p>
                   <p>
-                    Based in Andhra Pradesh, we capture the essence of biking culture—
-                    the roar of engines, the camaraderie of riders, and the breathtaking 
-                    landscapes that make every journey memorable.
+                    It brings riders and travelers together to share real experiences, discover places, and help others plan better journeys.
                   </p>
                   <p>
-                    Today, Bikergram AP stands as a digital identity for riders who 
-                    want to be part of something bigger than solo rides. We're building 
-                    a movement, one reel at a time.
+                    Every shared journey becomes a guide, helping others ride with more confidence, clarity, and purpose.
+                  </p>
+                  <p>
+                    Because for us, it's not just about the ride — it's about connection, contribution, and belonging beyond the road.
                   </p>
                 </div>
               </motion.div>
@@ -121,9 +117,7 @@ const About = () => {
                 <Eye className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-display text-2xl text-foreground mb-3">OUR VISION</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become India's most recognized biker content platform, inspiring 
-                  millions to embrace the riding lifestyle while showcasing the beauty 
-                  of our nation's roads and communities.
+                  To become a space where riders feel at home, connect through journeys, and inspire each other beyond the road.
                 </p>
               </motion.div>
 
@@ -137,9 +131,7 @@ const About = () => {
                 <Target className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-display text-2xl text-foreground mb-3">OUR MISSION</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To create world-class cinematic content that celebrates the biker 
-                  spirit, foster a supportive community of riders, and collaborate 
-                  with brands that share our passion for motorcycles.
+                  To create meaningful connections among riders by sharing journeys, experiences, and moments that inspire.
                 </p>
               </motion.div>
             </div>
