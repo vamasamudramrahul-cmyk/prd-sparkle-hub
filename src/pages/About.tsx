@@ -131,9 +131,7 @@ const About = () => {
                 <Target className="w-10 h-10 text-primary mb-4" />
                 <h3 className="font-display text-2xl text-foreground mb-3">OUR MISSION</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To create world-class cinematic content that celebrates the biker 
-                  spirit, foster a supportive community of riders, and collaborate 
-                  with brands that share our passion for motorcycles.
+                  To create meaningful connections among riders by sharing journeys, experiences, and moments that inspire.
                 </p>
               </motion.div>
             </div>
