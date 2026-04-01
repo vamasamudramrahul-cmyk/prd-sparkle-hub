@@ -1,41 +1,102 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Play, X, Instagram } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, Users, Send, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hero-bikes.jpg";
 import bikeDetail from "@/assets/bike-detail.jpg";
 import communityImage from "@/assets/community.jpg";
 
-const galleryItems = [
-  { id: 1, src: heroImage, title: "Dawn Patrol", category: "rides", type: "photo" },
-  { id: 2, src: bikeDetail, title: "Chrome Dreams", category: "bikes", type: "photo" },
-  { id: 3, src: communityImage, title: "The Squad", category: "community", type: "photo" },
-  { id: 4, src: heroImage, title: "Highway to Horizon", category: "rides", type: "reel" },
-  { id: 5, src: bikeDetail, title: "Engine Poetry", category: "bikes", type: "photo" },
-  { id: 6, src: communityImage, title: "Pre-ride Rituals", category: "community", type: "photo" },
-  { id: 7, src: heroImage, title: "Golden Hour Cruise", category: "rides", type: "reel" },
-  { id: 8, src: bikeDetail, title: "Beast Mode", category: "bikes", type: "photo" },
-  { id: 9, src: communityImage, title: "Victory Pose", category: "community", type: "photo" },
+const places = [
+  {
+    id: 1,
+    image: heroImage,
+    name: "Araku Valley",
+    description: "A breathtaking hill station with winding roads perfect for scenic rides.",
+    tag: "Scenic",
+  },
+  {
+    id: 2,
+    image: bikeDetail,
+    name: "Srisailam",
+    description: "Temple town surrounded by dense forests and thrilling ghat roads.",
+    tag: "Temple",
+  },
+  {
+    id: 3,
+    image: communityImage,
+    name: "Lambasingi",
+    description: "Known as the Kashmir of Andhra Pradesh — misty mornings and cool climbs.",
+    tag: "Ride Spot",
+  },
+  {
+    id: 4,
+    image: heroImage,
+    name: "Horsley Hills",
+    description: "A serene getaway with hairpin bends and panoramic valley views.",
+    tag: "Scenic",
+  },
+  {
+    id: 5,
+    image: bikeDetail,
+    name: "Gandikota",
+    description: "India's Grand Canyon — rugged terrain and stunning gorge views.",
+    tag: "Ride Spot",
+  },
+  {
+    id: 6,
+    image: communityImage,
+    name: "Ananthagiri Hills",
+    description: "A lush green escape near Hyderabad with smooth twisty roads.",
+    tag: "Scenic",
+  },
 ];
 
-const categories = ["all", "rides", "bikes", "community"];
+const clubs = [
+  {
+    id: 1,
+    name: "Vizag Riders Club",
+    location: "Visakhapatnam, AP",
+    description: "Weekend group rides along the coast and Eastern Ghats.",
+    contact: "https://instagram.com/bikergram_andrapradesh",
+  },
+  {
+    id: 2,
+    name: "Hyderabad Moto Brotherhood",
+    location: "Hyderabad, TG",
+    description: "Long-distance touring and adventure riding community.",
+    contact: "https://instagram.com/bikergram_andrapradesh",
+  },
+  {
+    id: 3,
+    name: "Tirupati Throttle Squad",
+    location: "Tirupati, AP",
+    description: "Temple runs, hill rides, and weekend breakfast meetups.",
+    contact: "https://instagram.com/bikergram_andrapradesh",
+  },
+  {
+    id: 4,
+    name: "Guntur Gear Heads",
+    location: "Guntur, AP",
+    description: "Passionate riders exploring the heartland of Andhra Pradesh.",
+    contact: "https://instagram.com/bikergram_andrapradesh",
+  },
+];
+
+const tagColors: Record<string, string> = {
+  Scenic: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+  Temple: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  "Ride Spot": "bg-primary/20 text-primary border-primary/30",
+};
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
-
-  const filteredItems = activeCategory === "all" 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-24">
-        {/* Header */}
+        {/* Hero Header */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <motion.div
@@ -44,140 +105,193 @@ const Gallery = () => {
               transition={{ duration: 0.8 }}
               className="text-center max-w-3xl mx-auto"
             >
-              <span className="text-primary uppercase tracking-widest text-sm">
-                Media Gallery
+              <span className="text-primary uppercase tracking-widest text-sm font-body">
+                Biker Hub
               </span>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground mt-2">
-                OUR <span className="text-primary">CONTENT</span>
+                BIKER <span className="text-primary">HUB</span>
               </h1>
-              <p className="text-muted-foreground text-lg mt-6">
-                Explore our collection of cinematic moments from rides across Andhra Pradesh.
+              <p className="text-muted-foreground text-lg mt-6 tracking-wide">
+                Explore. Connect. Ride Together.
               </p>
             </motion.div>
+          </div>
+        </section>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-2 rounded-full text-sm uppercase tracking-wider transition-all ${
-                    activeCategory === category
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                  }`}
+        {/* ── DISCOVER PLACES ── */}
+        <section className="pb-20">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-3"
+            >
+              <MapPin className="w-6 h-6 text-primary" />
+              <h2 className="font-display text-3xl md:text-4xl text-foreground uppercase">
+                Discover <span className="text-primary">Places</span>
+              </h2>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground mb-10 max-w-2xl"
+            >
+              Discover real places shared by riders — from popular destinations to hidden gems, based on real journeys.
+            </motion.p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {places.map((place, index) => (
+                <motion.div
+                  key={place.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="group relative rounded-xl overflow-hidden bg-card border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.25)]"
                 >
-                  {category}
-                </button>
+                  {/* Image */}
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={place.image}
+                      alt={place.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-display text-xl text-foreground flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" />
+                        {place.name}
+                      </h3>
+                      {place.tag && (
+                        <Badge
+                          className={`text-[10px] uppercase tracking-wider ${tagColors[place.tag] || ""}`}
+                        >
+                          {place.tag}
+                        </Badge>
+                      )}
+                    </div>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                      {place.description}
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full group/btn">
+                      View More
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                    </Button>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Gallery Grid */}
-        <section className="pb-20">
+        {/* ── RIDER COMMUNITY / CLUBS ── */}
+        <section className="py-20 bg-secondary/30">
           <div className="container mx-auto px-4">
-            <motion.div 
-              layout
-              className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"
-            >
-              <AnimatePresence mode="popLayout">
-                {filteredItems.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="relative group cursor-pointer overflow-hidden rounded-lg aspect-square"
-                    onClick={() => setSelectedImage(item)}
-                  >
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <div>
-                        <p className="text-foreground font-display text-lg">
-                          {item.title}
-                        </p>
-                        <span className="text-primary/80 text-sm capitalize">
-                          {item.category}
-                        </span>
-                      </div>
-                    </div>
-                    {/* Play Icon for Reels */}
-                    {item.type === "reel" && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Play className="w-5 h-5 text-primary-foreground ml-0.5" fill="currentColor" />
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-
-            {/* Instagram CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mt-16"
+              className="flex items-center gap-3 mb-3"
             >
-              <p className="text-muted-foreground mb-4">
-                Follow us for daily content drops
-              </p>
-              <a
-                href="https://instagram.com/bikergram_andrapradesh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="default" size="lg">
-                  <Instagram className="w-5 h-5" />
-                  @bikergram_andrapradesh
-                </Button>
-              </a>
+              <Users className="w-6 h-6 text-primary" />
+              <h2 className="font-display text-3xl md:text-4xl text-foreground uppercase">
+                Rider <span className="text-primary">Community</span>
+              </h2>
             </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground mb-10 max-w-2xl"
+            >
+              Connect with rider communities, join group rides, and grow together through shared journeys.
+            </motion.p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {clubs.map((club, index) => (
+                <motion.div
+                  key={club.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group rounded-xl bg-card border border-border p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.25)]"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                      <Users className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-display text-xl text-foreground mb-1">
+                        {club.name}
+                      </h3>
+                      <p className="text-primary/80 text-sm flex items-center gap-1 mb-2">
+                        <MapPin className="w-3.5 h-3.5" />
+                        {club.location}
+                      </p>
+                      <p className="text-muted-foreground text-sm mb-4">
+                        {club.description}
+                      </p>
+                      <a
+                        href={club.contact}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="outline" size="sm">
+                          Join / Contact
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Lightbox */}
-        <AnimatePresence>
-          {selectedImage && (
+        {/* ── CONTRIBUTION CTA ── */}
+        <section className="py-24">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg flex items-center justify-center p-4"
-              onClick={() => setSelectedImage(null)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 via-card to-primary/5 border border-primary/20 p-10 md:p-16 text-center"
             >
-              <button
-                className="absolute top-6 right-6 text-foreground/70 hover:text-foreground transition-colors"
-                onClick={() => setSelectedImage(null)}
-              >
-                <X className="w-8 h-8" />
-              </button>
-              <motion.img
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                src={selectedImage.src}
-                alt={selectedImage.title}
-                className="max-w-full max-h-[80vh] object-contain rounded-lg"
-                onClick={(e) => e.stopPropagation()}
-              />
-              <div className="absolute bottom-8 text-center">
-                <p className="font-display text-2xl text-foreground">{selectedImage.title}</p>
-                <p className="text-primary text-sm capitalize mt-1">{selectedImage.category}</p>
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.08)_0%,_transparent_70%)]" />
+
+              <div className="relative z-10">
+                <Send className="w-10 h-10 text-primary mx-auto mb-6" />
+                <h2 className="font-display text-3xl md:text-4xl text-foreground uppercase mb-4">
+                  Share Your <span className="text-primary">Experience</span>
+                </h2>
+                <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-3">
+                  Want to share your ride or a place you've visited?
+                </p>
+                <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                  Help others explore better by contributing your experience.
+                </p>
+                <a
+                  href="https://forms.gle/your-google-form-id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="default" size="lg" className="glow-red">
+                    Submit Your Experience
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </a>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </div>
+        </section>
       </main>
 
       <Footer />
