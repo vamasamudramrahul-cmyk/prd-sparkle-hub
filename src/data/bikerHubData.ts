@@ -18,260 +18,63 @@ export const statesData: StateData[] = [
     name: "Andhra Pradesh",
     shortCode: "AP",
     districts: [
-      {
-        name: "Kurnool",
-        places: [
-          { name: "Gandikota" },
-          { name: "Belum Caves" },
-          { name: "Yaganti Temple" },
-          { name: "Oravakallu Rock Garden" },
-          { name: "Srisailam" },
-          { name: "Mahanandi" },
-        ],
-      },
-      {
-        name: "Anantapur",
-        places: [
-          { name: "Lepakshi" },
-          { name: "Penukonda Fort" },
-          { name: "Thimmamma Marrimanu" },
-          { name: "Gooty Fort" },
-        ],
-      },
-      {
-        name: "Kadapa",
-        places: [
-          { name: "Gandikota Canyon" },
-          { name: "Pushpagiri Temple" },
-          { name: "Sidhout Fort" },
-          { name: "Devuni Kadapa" },
-        ],
-      },
-      {
-        name: "Chittoor",
-        places: [
-          { name: "Horsley Hills" },
-          { name: "Kailasakona Waterfalls" },
-          { name: "Talakona Waterfalls" },
-          { name: "Nagari Hills" },
-          { name: "Kanipakam" },
-        ],
-      },
-      {
-        name: "Visakhapatnam",
-        places: [
-          { name: "Araku Valley" },
-          { name: "Lambasingi" },
-          { name: "Borra Caves" },
-          { name: "Rishikonda Beach" },
-          { name: "Yarada Beach" },
-        ],
-      },
-      {
-        name: "East Godavari",
-        places: [
-          { name: "Papikondalu" },
-          { name: "Coringa Wildlife Sanctuary" },
-          { name: "Draksharamam" },
-          { name: "Annavaram" },
-        ],
-      },
-      {
-        name: "Nellore",
-        places: [
-          { name: "Pulicat Lake" },
-          { name: "Mypadu Beach" },
-          { name: "Penchalakona" },
-          { name: "Udayagiri Fort" },
-        ],
-      },
-      {
-        name: "Prakasam",
-        places: [
-          { name: "Ongole" },
-          { name: "Kothapatnam Beach" },
-          { name: "Cumbum Lake" },
-        ],
-      },
-      {
-        name: "Guntur",
-        places: [
-          { name: "Amaravathi" },
-          { name: "Kondaveedu Fort" },
-          { name: "Undavalli Caves" },
-          { name: "Mangalagiri" },
-        ],
-      },
-      {
-        name: "Krishna",
-        places: [
-          { name: "Machilipatnam Beach" },
-          { name: "Manginapudi Beach" },
-          { name: "Hamsaladeevi" },
-          { name: "Kanaka Durga Temple" },
-        ],
-      },
-      {
-        name: "West Godavari",
-        places: [
-          { name: "Kolleru Lake" },
-          { name: "Eluru" },
-          { name: "Dwaraka Tirumala" },
-        ],
-      },
-      {
-        name: "Srikakulam",
-        places: [
-          { name: "Arasavilli Sun Temple" },
-          { name: "Srikurmam" },
-          { name: "Baruva Beach" },
-        ],
-      },
-      {
-        name: "Vizianagaram",
-        places: [
-          { name: "Vizianagaram Fort" },
-          { name: "Ramateertham" },
-          { name: "Bobbili Fort" },
-        ],
-      },
+      { name: "Kurnool", places: [{ name: "Gandikota" }, { name: "Belum Caves" }, { name: "Yaganti Temple" }, { name: "Oravakallu Rock Garden" }, { name: "Srisailam" }, { name: "Mahanandi" }] },
+      { name: "Anantapur", places: [{ name: "Lepakshi" }, { name: "Penukonda Fort" }, { name: "Thimmamma Marrimanu" }, { name: "Gooty Fort" }] },
+      { name: "Kadapa", places: [{ name: "Gandikota Canyon" }, { name: "Pushpagiri Temple" }, { name: "Sidhout Fort" }, { name: "Devuni Kadapa" }] },
+      { name: "Chittoor", places: [{ name: "Horsley Hills" }, { name: "Kailasakona Waterfalls" }, { name: "Talakona Waterfalls" }, { name: "Nagari Hills" }, { name: "Kanipakam" }] },
+      { name: "Visakhapatnam", places: [{ name: "Araku Valley" }, { name: "Lambasingi" }, { name: "Borra Caves" }, { name: "Rishikonda Beach" }, { name: "Yarada Beach" }] },
+      { name: "East Godavari", places: [{ name: "Papikondalu" }, { name: "Coringa Wildlife Sanctuary" }, { name: "Draksharamam" }, { name: "Annavaram" }] },
+      { name: "Nellore", places: [{ name: "Pulicat Lake" }, { name: "Mypadu Beach" }, { name: "Penchalakona" }, { name: "Udayagiri Fort" }] },
+      { name: "Prakasam", places: [{ name: "Ongole" }, { name: "Kothapatnam Beach" }, { name: "Cumbum Lake" }] },
+      { name: "Guntur", places: [{ name: "Amaravathi" }, { name: "Kondaveedu Fort" }, { name: "Undavalli Caves" }, { name: "Mangalagiri" }] },
+      { name: "Krishna", places: [{ name: "Machilipatnam Beach" }, { name: "Manginapudi Beach" }, { name: "Hamsaladeevi" }, { name: "Kanaka Durga Temple" }] },
+      { name: "West Godavari", places: [{ name: "Kolleru Lake" }, { name: "Eluru" }, { name: "Dwaraka Tirumala" }] },
+      { name: "Srikakulam", places: [{ name: "Arasavilli Sun Temple" }, { name: "Srikurmam" }, { name: "Baruva Beach" }] },
+      { name: "Vizianagaram", places: [{ name: "Vizianagaram Fort" }, { name: "Ramateertham" }, { name: "Bobbili Fort" }] },
     ],
   },
   {
     name: "Telangana",
     shortCode: "TG",
     districts: [
-      {
-        name: "Hyderabad",
-        places: [
-          { name: "Charminar" },
-          { name: "Golconda Fort" },
-          { name: "Hussain Sagar" },
-          { name: "Ramoji Film City" },
-        ],
-      },
-      {
-        name: "Rangareddy",
-        places: [
-          { name: "Ananthagiri Hills" },
-          { name: "Shamirpet Lake" },
-          { name: "Chilkur Balaji Temple" },
-          { name: "Kotipalli Reservoir" },
-        ],
-      },
-      {
-        name: "Medchal-Malkajgiri",
-        places: [
-          { name: "Keesara Temple" },
-          { name: "Medchal" },
-        ],
-      },
-      {
-        name: "Sangareddy",
-        places: [
-          { name: "Pocharam Dam" },
-          { name: "Sangareddy Fort" },
-          { name: "Ameenpur Lake" },
-        ],
-      },
-      {
-        name: "Warangal",
-        places: [
-          { name: "Warangal Fort" },
-          { name: "Thousand Pillar Temple" },
-          { name: "Ramappa Temple" },
-          { name: "Laknavaram Lake" },
-          { name: "Pakhal Lake" },
-        ],
-      },
-      {
-        name: "Karimnagar",
-        places: [
-          { name: "Elgandal Fort" },
-          { name: "Lower Manair Dam" },
-          { name: "Kothakonda" },
-        ],
-      },
-      {
-        name: "Nizamabad",
-        places: [
-          { name: "Nizamabad Fort" },
-          { name: "Alisagar" },
-          { name: "Pocharam Wildlife Sanctuary" },
-        ],
-      },
-      {
-        name: "Adilabad",
-        places: [
-          { name: "Kuntala Waterfalls" },
-          { name: "Kawal Wildlife Sanctuary" },
-          { name: "Shivaram Wildlife Sanctuary" },
-          { name: "Pochera Waterfalls" },
-        ],
-      },
-      {
-        name: "Mahabubnagar",
-        places: [
-          { name: "Pillalamarri" },
-          { name: "Jurala Dam" },
-          { name: "Somasila Dam" },
-        ],
-      },
-      {
-        name: "Nalgonda",
-        places: [
-          { name: "Nagarjuna Sagar Dam" },
-          { name: "Ethipothala Waterfalls" },
-          { name: "Devarakonda Fort" },
-        ],
-      },
-      {
-        name: "Khammam",
-        places: [
-          { name: "Khammam Fort" },
-          { name: "Kinnerasani Dam" },
-          { name: "Parnasala" },
-        ],
-      },
-      {
-        name: "Bhadradri Kothagudem",
-        places: [
-          { name: "Bhadrachalam Temple" },
-          { name: "Parnasala" },
-          { name: "Kinnerasani Wildlife Sanctuary" },
-        ],
-      },
+      { name: "Adilabad", places: [{ name: "Gayatri Waterfalls" }, { name: "Jainath Temple" }, { name: "Kala Ashram" }, { name: "Kawal Wildlife Sanctuary" }, { name: "Kuntala Waterfalls" }, { name: "Mahatma Gandhi Park" }, { name: "Mavala Park" }, { name: "Pochera Waterfalls" }, { name: "Sahastrakund Waterfalls" }, { name: "Kadile Papahareshwar Temple" }, { name: "Satnala Dam" }, { name: "Satnala Project Forest Area" }, { name: "Pulsi Reservoir" }, { name: "Indravelli Forest Region" }, { name: "Ranidongri Hill Viewpoint" }, { name: "Bandrev Waterfall" }, { name: "Jamini Waterfall" }, { name: "Ananthagiri Hills" }] },
+      { name: "Nirmal", places: [{ name: "Nirmal Fort" }, { name: "Sri Gnana Saraswathi Devasthanam" }, { name: "Nirmal Toys Village" }, { name: "Kadam Dam" }, { name: "Kadem Project Reservoir" }, { name: "Dilawarpur Forest Area" }, { name: "Swarna River Banks" }, { name: "Khanapur Forest Belt" }, { name: "Kadile Papahareshwar Forest Route" }, { name: "Basar Triveni Sangamam" }] },
+      { name: "Kumuram Bheem", places: [{ name: "Pranahita Wildlife Sanctuary" }, { name: "Kerameri Ghat Road" }, { name: "Kerameri Hills Viewpoint" }, { name: "Kumuram Bheem Memorial Park" }, { name: "Sirpur Fort" }, { name: "Peddavagu Project" }, { name: "Wankidi Forest Area" }, { name: "Rebbena Forest Track" }, { name: "Tiryani Forest Region" }, { name: "Asifabad Fort Ruins" }] },
+      { name: "Nizamabad", places: [{ name: "Ali Sagar Reservoir" }, { name: "Jankampet Lake" }, { name: "Badapahad Dargah" }, { name: "Dichpally Ramalayam" }, { name: "Mallaram Forest" }, { name: "Neelakanteshwara Temple" }, { name: "Nizam Sagar Dam" }, { name: "Nizamabad Fort" }, { name: "Sarangapur Hanuman Temple" }, { name: "Navanatha Siddeshwara Temple" }, { name: "Alisagar Deer Park" }, { name: "Mallaram Lake" }, { name: "Kanteshwar Temple" }, { name: "Nizamabad Clock Tower" }, { name: "Sarangapur Lake" }, { name: "Jakranpally Hills" }, { name: "Yedapally Lake" }] },
+      { name: "Kamareddy", places: [{ name: "Pocharam Wildlife Sanctuary" }, { name: "Pocharam Dam" }, { name: "Domakonda Fort" }, { name: "Domakonda Samsthanam Palace" }, { name: "Lingampet Forest Area" }, { name: "Bhiknoor Temple Complex" }, { name: "Tekriyal Lake" }, { name: "Borlam Lake" }, { name: "Machareddy Hills" }, { name: "Rajampet Forest Region" }, { name: "Ellareddy Forest Area" }, { name: "Kaulas Fort" }, { name: "Kaulas Wildlife Area" }] },
+      { name: "Karimnagar", places: [{ name: "Elgandal Fort" }, { name: "Gandhi Centenary Museum" }, { name: "Lower Manair Dam" }, { name: "Ujwala Park" }, { name: "Rajeev Gandhi Deer Park" }, { name: "Nagunur Fort" }, { name: "Molangur Fort" }, { name: "Manair River Front" }, { name: "Kothapalli Hills" }, { name: "Karimnagar Tower Circle" }, { name: "SRR Garden" }, { name: "Manair Island" }, { name: "Kothapalli Reservoir" }, { name: "Alugunur Temple" }, { name: "Bommakal Forest Area" }, { name: "Pedda Bonkur Archaeological Site" }, { name: "Karimnagar Rock Formations" }] },
+      { name: "Jagtial", places: [{ name: "Jagtial Fort" }, { name: "Kondagattu Anjaneya Swamy Temple" }, { name: "Dharmapuri Lakshmi Narasimha Swamy Temple" }, { name: "Dhulikatta Buddhist Site" }, { name: "Sri Mallikarjuna Swamy Temple" }, { name: "SRSP Backwaters" }, { name: "Polasa Lake" }, { name: "Raikal Kesavanatha Temple" }, { name: "Bheemuni Gutta" }, { name: "Kondagattu Hills Trek" }, { name: "Dharmapuri Godavari River Bank" }, { name: "Rayikal Fort Ruins" }, { name: "Endapalli Forest Area" }, { name: "Kodimyala Hills" }, { name: "Velgatoor River Point" }] },
+      { name: "Peddapalli", places: [{ name: "Ramagiri Fort" }, { name: "Sripada Yellampally Project" }, { name: "Godavari River Viewpoint" }, { name: "Ramagiri Hills Trek" }, { name: "Basanthnagar Forest Area" }, { name: "Manthani Temple Town" }, { name: "Manthani Godavari Ghat" }, { name: "Kamanpur Reserve Forest" }, { name: "Yellampally Backwaters" }, { name: "Gattusingaram Hills" }, { name: "Peddapalli Fort Ruins" }] },
+      { name: "Rajanna Sircilla", places: [{ name: "Vemulawada Rajarajeshwara Temple" }, { name: "Nampally Gutta" }, { name: "Singa Samudram Cheruvu" }, { name: "Mid Manair Dam" }, { name: "Vemulawada Temple Tank" }, { name: "Anupuram Reservoir" }, { name: "Kodurupaka Temple" }, { name: "Rudrangi Fort" }, { name: "Rudrangi Hills" }, { name: "Gambhiraopet Forest Area" }, { name: "Sircilla Textile Park" }, { name: "Boinpalli Hills" }, { name: "Konaraopet Lake" }, { name: "Chandurthi Forest Area" }, { name: "Sircilla River Bank" }] },
+      { name: "Hanumakonda", places: [{ name: "Thousand Pillar Temple" }, { name: "Bhadrakali Temple" }, { name: "Padmakshi Temple" }, { name: "Siddeshwara Temple" }, { name: "Waddepally Lake" }, { name: "Kakatiya Musical Garden" }, { name: "Bhadrakali Lake Viewpoint" }, { name: "Ursu Hill" }, { name: "Bhadrakali Rock Garden" }, { name: "Waddepally Tank Bund" }, { name: "Excise Colony Hill View" }] },
+      { name: "Warangal", places: [{ name: "Warangal Fort" }, { name: "Kakatiya Rock Garden" }, { name: "Swayambhu Temple" }, { name: "Kush Mahal" }, { name: "Ekashila Park" }, { name: "Regional Science Centre" }, { name: "Kakatiya Zoo Park" }, { name: "Warangal Lake" }, { name: "Dharmasagar Lake" }, { name: "Dharmasagar Reservoir" }, { name: "Enumamula Hillocks" }, { name: "Kakatiya Canal View" }] },
+      { name: "Mulugu", places: [{ name: "Ramappa Temple" }, { name: "Laknavaram Lake" }, { name: "Laknavaram Suspension Bridge" }, { name: "Bogatha Waterfalls" }, { name: "Medaram Sammakka Saralamma Temple" }, { name: "Tadvai Forest Area" }, { name: "Eturnagaram Wildlife Sanctuary" }, { name: "Pakhal Lake" }, { name: "Mangapet Forest" }, { name: "Mallur Temple" }, { name: "Mallur Waterfalls" }, { name: "Chalvai Forest Region" }, { name: "Govindaraopet Hills" }, { name: "Venkatapur Forest Track" }, { name: "Damaravai Megalithic Site" }, { name: "Kothaguda Forest Area" }, { name: "Pasra Forest Area" }, { name: "Tadwai Eco Tourism Park" }, { name: "Laknavaram Island Viewpoint" }] },
+      { name: "Jayashankar Bhupalpally", places: [{ name: "Kaleshwaram Temple" }, { name: "Kaleshwaram Project Viewpoint" }, { name: "Mahadevpur Forest Area" }, { name: "Kataram Forest" }, { name: "Shivaram Wildlife Sanctuary" }, { name: "Godavari River Viewpoint" }, { name: "Mahadevpur Ghat Road" }, { name: "Ghanpur Hills" }, { name: "Kataram Lake" }, { name: "Mahadevpur Backwaters" }, { name: "Bhupalpally Forest Area" }, { name: "Tekumatla Hills" }, { name: "Tadicherla Hills" }] },
+      { name: "Hyderabad", places: [{ name: "Birla Mandir" }, { name: "Charminar" }, { name: "Chowmahalla Palace" }, { name: "Golconda Fort" }, { name: "Hussain Sagar" }, { name: "Salar Jung Museum" }, { name: "Qutb Shahi Tombs" }, { name: "Taramati Baradari" }, { name: "Paigah Tombs" }, { name: "KBR National Park" }, { name: "Nehru Zoological Park" }, { name: "Moula Ali Dargah" }, { name: "Lumbini Park" }, { name: "Tank Bund" }, { name: "NTR Gardens" }, { name: "Durgam Cheruvu" }, { name: "Durgam Cheruvu Cable Bridge" }, { name: "Shilparamam" }, { name: "Falaknuma Palace" }, { name: "Mecca Masjid" }, { name: "Purani Haveli" }] },
+      { name: "Rangareddy", places: [{ name: "Ramoji Film City" }, { name: "Osman Sagar" }, { name: "Himayat Sagar" }, { name: "Chilkur Balaji Temple" }, { name: "Mrugavani National Park" }, { name: "Gandipet Eco Park" }, { name: "Aziz Nagar Forest Area" }, { name: "Chilkur Lake" }, { name: "Kokapet Lake" }, { name: "Shankarpally Hills" }, { name: "Maheshwaram Forest Area" }, { name: "Pedda Cheruvu" }, { name: "Shamshabad Lake View" }, { name: "Gandipet Sunset Point" }] },
+      { name: "Medchal", places: [{ name: "Shamirpet Lake" }, { name: "Jawahar Deer Park" }, { name: "Shamirpet Deer Park" }, { name: "Fox Sagar Lake" }, { name: "Keesara Gutta" }, { name: "Keesara Lake" }, { name: "Kapra Lake" }, { name: "Safilguda Lake" }, { name: "Dammaiguda Forest Area" }, { name: "Dulapally Forest Track" }, { name: "Alwal Lake" }, { name: "Kompally Lake" }, { name: "Gundlapochampally Lake" }, { name: "Kandlakoya Oxygen Park" }] },
+      { name: "Vikarabad", places: [{ name: "Ananthagiri Hills" }, { name: "Ananthapadmanabha Swamy Temple" }, { name: "Kotepally Reservoir" }, { name: "Kotepally Lake View" }, { name: "Vikarabad Forest Trek" }, { name: "Nagasamudram Lake" }, { name: "Dharur Forest Area" }, { name: "Tandur Limestone Hills" }, { name: "Kulkacherla Hills" }, { name: "Ananthagiri Trek Routes" }, { name: "Musi River Origin Point" }, { name: "Kodangal Forest Area" }, { name: "Kotepally Sunset Point" }] },
+      { name: "Mahabubnagar", places: [{ name: "Koilkonda Fort" }, { name: "Pillalamarri Banyan Tree" }, { name: "Mayuri Haritha Vanam" }, { name: "Mahabubnagar Clock Tower" }, { name: "Koilsagar Dam" }, { name: "Rajolibanda Diversion Scheme" }, { name: "Bhootpur Lake" }, { name: "Mahabubnagar Tank Bund" }, { name: "Koilkonda Hills Trek" }, { name: "Yenugonda Temple" }, { name: "Yenugonda Hill View" }, { name: "Jadcherla Lake" }, { name: "Bhutpur Forest Area" }, { name: "Mahabubnagar Urban Park" }] },
+      { name: "Nagarkurnool", places: [{ name: "Mallela Theertham Waterfall" }, { name: "Somasila Temple" }, { name: "Srisailam Backwaters" }, { name: "Farahabad Viewpoint" }, { name: "Mannanur Forest Area" }, { name: "Amrabad Tiger Reserve" }, { name: "Domalapenta Forest" }, { name: "Akkamahadevi Caves" }, { name: "Srisailam Reservoir Viewpoint" }, { name: "Vatavarlapally Lake" }, { name: "Lingala Forest Area" }, { name: "Nallamala Hills Trek Routes" }, { name: "Umamaheshwaram Temple" }, { name: "Umamaheshwaram Viewpoint" }] },
+      { name: "Wanaparthy", places: [{ name: "Wanaparthy Palace" }, { name: "Ghanpur Fort" }, { name: "Sarala Sagar Dam" }, { name: "Sarala Sagar Reservoir" }, { name: "Wanaparthy Lake" }, { name: "Pebbair Forest Area" }, { name: "Ghanpur Hills" }, { name: "Wanaparthy Tank Bund" }, { name: "Kothakota Lake" }] },
+      { name: "Jogulamba Gadwal", places: [{ name: "Jogulamba Temple" }, { name: "Alampur Navabrahma Temples" }, { name: "Tungabhadra River Bank" }, { name: "Jurala Dam" }, { name: "Jurala Reservoir" }, { name: "Beechupally Temple" }, { name: "Beechupally Anjaneya Swamy Temple" }, { name: "Gadwal Fort" }, { name: "Gadwal Palace" }, { name: "Rajoli Bandh" }, { name: "Itikyala Forest Area" }] },
+      { name: "Narayanpet", places: [{ name: "Chandraghad Fort" }, { name: "Narayanpet Handloom Village" }, { name: "Narayanpet Lake" }, { name: "Kosgi Forest Area" }, { name: "Dhanwada Hills" }, { name: "Narayanpet Tank Bund" }, { name: "Marikal Forest Area" }, { name: "Krishna River Border View" }] },
+      { name: "Khammam", places: [{ name: "Khammam Fort" }, { name: "Lakaram Lake" }, { name: "Palair Lake" }, { name: "Nelakondapalli Buddhist Site" }, { name: "Kusumanchi Ancient Temples" }, { name: "Jamalapuram Temple" }, { name: "Kallur Temple Town" }, { name: "Kanakagiri Reserve Forest" }, { name: "Wyra Reservoir" }, { name: "Wyra Dam" }, { name: "Tallada Forest Area" }, { name: "Mudigonda Hills" }, { name: "Bonakal Forest Area" }, { name: "Konijerla Lake" }, { name: "Khammam Rock Formations" }] },
+      { name: "Bhadradri Kothagudem", places: [{ name: "Bhadrachalam Temple" }, { name: "Parnasala" }, { name: "Kinnerasani Wildlife Sanctuary" }, { name: "Kinnerasani Dam" }, { name: "Kinnerasani Lake" }, { name: "Perantalapalli" }, { name: "Dummugudem Barrage" }, { name: "Charla Forest Area" }, { name: "Tekulapalli Forest Region" }, { name: "Cherla Hills" }, { name: "Gundala Waterfalls" }, { name: "Papikondalu" }, { name: "Paloncha Hills" }, { name: "Julurpad Forest Area" }, { name: "Aswapuram Forest Track" }] },
+      { name: "Suryapet", places: [{ name: "Ethipothala Falls" }, { name: "Phanigiri Buddhist Site" }, { name: "Mellacheruvu Temple" }, { name: "Kodad Hills" }, { name: "Suryapet Lake" }, { name: "Mattapalli Temple" }, { name: "Huzurnagar River View" }, { name: "Nadigudem Forest Area" }, { name: "Garidepally Hills" }, { name: "Chivvemla Lake" }] },
+      { name: "Nalgonda", places: [{ name: "Nagarjuna Sagar Dam" }, { name: "Nagarjunakonda Island" }, { name: "Devarakonda Fort" }, { name: "Rachakonda Fort" }, { name: "Chaya Someswara Temple" }, { name: "Nandikonda Buddhist Site" }, { name: "Udayasamudram Tank" }, { name: "Kondamallepalli Cheruvu" }, { name: "Dindi Reservoir" }, { name: "Akkampally Reservoir" }, { name: "Peddagattu Hills" }, { name: "Panagal Museum" }, { name: "Brahmagiri Hills" }, { name: "Chandampet Forest Area" }] },
+      { name: "Medak", places: [{ name: "Medak Cathedral" }, { name: "Medak Fort" }, { name: "Pocharam Reservoir" }, { name: "Pocharam Wildlife Sanctuary" }, { name: "Edupayala Vana Durga Bhavani Temple" }, { name: "Manjeera Dam" }, { name: "Manjeera Wildlife Sanctuary" }, { name: "Narsapur Forest" }, { name: "Narsapur Lake" }, { name: "Ramayampet Hills" }, { name: "Tekmal Forest Area" }, { name: "Alladurg Forest" }, { name: "Medak Church Viewpoint" }, { name: "Shankarampet Reservoir" }, { name: "Chegunta Lake" }] },
+      { name: "Siddipet", places: [{ name: "Komuravelli Mallanna Temple" }, { name: "Kondapochamma Reservoir" }, { name: "Siddipet Urban Park" }, { name: "Markook Forest Area" }, { name: "Ananthasagar Reservoir" }, { name: "Wargal Saraswati Temple" }, { name: "Wargal Hills" }, { name: "Dubbaka Lake" }, { name: "Cherial Village" }, { name: "Cherial Forest Area" }, { name: "Husnabad Hills" }, { name: "Nanganur Lake" }, { name: "Mulugu Forest Belt" }] },
+      { name: "Yadadri Bhuvanagiri", places: [{ name: "Yadadri Lakshmi Narasimha Swamy Temple" }, { name: "Bhongir Fort" }, { name: "Kolanupaka Jain Temple" }, { name: "Surendrapuri Mythological Museum" }, { name: "Raigiri Hills" }, { name: "Pochampally Handloom Village" }, { name: "Aler Hills" }, { name: "Motakondur Forest Area" }, { name: "Bhuvanagiri Rock Climbing Spot" }, { name: "Gundlapalli Lake" }, { name: "Valigonda Hills" }, { name: "Rajapet Fort" }] },
+      { name: "Jangaon", places: [{ name: "Pembarthi Metal Craft Village" }, { name: "Palakurthy Someswara Temple" }, { name: "Palakurthy Hills" }, { name: "Raghunathpally Lake" }, { name: "Jangaon Fort Ruins" }, { name: "Kodakandla Lake" }, { name: "Devaruppula Forest Area" }, { name: "Lingalaghanpur Hills" }, { name: "Bachannapet Lake" }] },
+      { name: "Sangareddy", places: [{ name: "Chincholi Wildlife Sanctuary" }, { name: "Edupayala Vana Durga Bhavani Temple" }, { name: "Environmental Education Centre Manjeera" }, { name: "Heritage Jail Museum" }, { name: "Jogipet Bavi Step-well" }, { name: "Kondapur Archaeological Museum" }, { name: "Manjeera Wildlife Sanctuary & Reservoir" }, { name: "Sangameshwara Temple" }, { name: "Sangareddy Fort" }, { name: "Singur Dam" }, { name: "Singur Reservoir" }, { name: "Andole Lake" }, { name: "Kondapur Village Site Museum Area" }, { name: "Kalabgur Hills" }] },
     ],
   },
 ];
 
 export const clubs = [
-  {
-    id: 1,
-    name: "Vizag Riders Club",
-    location: "Visakhapatnam, AP",
-    description: "Weekend group rides along the coast and Eastern Ghats.",
-    contact: "https://instagram.com/bikergram_andrapradesh",
-  },
-  {
-    id: 2,
-    name: "Hyderabad Moto Brotherhood",
-    location: "Hyderabad, TG",
-    description: "Long-distance touring and adventure riding community.",
-    contact: "https://instagram.com/bikergram_andrapradesh",
-  },
-  {
-    id: 3,
-    name: "Tirupati Throttle Squad",
-    location: "Tirupati, AP",
-    description: "Temple runs, hill rides, and weekend breakfast meetups.",
-    contact: "https://instagram.com/bikergram_andrapradesh",
-  },
-  {
-    id: 4,
-    name: "Guntur Gear Heads",
-    location: "Guntur, AP",
-    description: "Passionate riders exploring the heartland of Andhra Pradesh.",
-    contact: "https://instagram.com/bikergram_andrapradesh",
-  },
+  { id: 1, name: "Vizag Riders Club", location: "Visakhapatnam, AP", description: "Weekend group rides along the coast and Eastern Ghats.", contact: "https://instagram.com/bikergram_andrapradesh" },
+  { id: 2, name: "Hyderabad Moto Brotherhood", location: "Hyderabad, TG", description: "Long-distance touring and adventure riding community.", contact: "https://instagram.com/bikergram_andrapradesh" },
+  { id: 3, name: "Tirupati Throttle Squad", location: "Tirupati, AP", description: "Temple runs, hill rides, and weekend breakfast meetups.", contact: "https://instagram.com/bikergram_andrapradesh" },
+  { id: 4, name: "Guntur Gear Heads", location: "Guntur, AP", description: "Passionate riders exploring the heartland of Andhra Pradesh.", contact: "https://instagram.com/bikergram_andrapradesh" },
 ];
