@@ -87,7 +87,7 @@ const Hero = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="heroOutline">
+              <Button variant="hero">
                 Submit Your Ride
               </Button>
             </Link>
