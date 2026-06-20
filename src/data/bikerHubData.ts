@@ -1,5 +1,9 @@
 export interface PlaceData {
   name: string;
+  description?: string;
+  images?: string[];
+  lat?: number;
+  lng?: number;
 }
 
 export interface DistrictData {

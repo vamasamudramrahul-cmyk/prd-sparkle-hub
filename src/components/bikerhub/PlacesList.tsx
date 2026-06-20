@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowLeft, Send, ArrowRight } from "lucide-react";
 import { DistrictData } from "@/data/bikerHubData";
 import { Button } from "@/components/ui/button";
+import NavigateButton from "./NavigateButton";
 
 interface PlacesListProps {
   district: DistrictData;
@@ -50,15 +51,37 @@ const PlacesList = ({ district, stateName, onBack }: PlacesListProps) => {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.03 }}
-              className="group flex items-center gap-3 rounded-lg bg-card border border-border p-4 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.15)] cursor-pointer"
+              className="group rounded-lg bg-card border border-border p-4 hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.15)]"
             >
-              <MapPin className="w-4 h-4 text-primary shrink-0" />
-              <span className="text-foreground font-body text-sm md:text-base">
-                {place.name}
-              </span>
-              <span className="ml-auto text-[10px] text-muted-foreground uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
-                Coming Soon
-              </span>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-foreground font-body text-sm md:text-base font-semibold">
+                    {place.name}
+                  </h3>
+                  {place.description && (
+                    <p className="text-muted-foreground text-xs md:text-sm mt-1 line-clamp-2">
+                      {place.description}
+                    </p>
+                  )}
+                  {place.images && place.images.length > 0 && (
+                    <div className="flex gap-2 mt-3 overflow-x-auto">
+                      {place.images.slice(0, 3).map((src, i) => (
+                        <img
+                          key={i}
+                          src={src}
+                          alt={`${place.name} ${i + 1}`}
+                          loading="lazy"
+                          className="h-16 w-24 object-cover rounded-md border border-border shrink-0"
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="mt-3 flex items-center justify-end">
+                <NavigateButton place={place} />
+              </div>
             </motion.div>
           ))}
         </div>
