@@ -72,14 +72,6 @@ export function openNavigation(target: NavTarget): boolean {
   const primary = buildNavigationUrl(target, os);
   const webFallback = webFallbackUrl(target);
 
-  if (!hasCoords(target)) {
-    console.warn(
-      `[BikerHub] Coordinates missing for destination "${target.label ?? "(unnamed)"}"${
-        target.query ? ` (${target.query})` : ""
-      } — using name search fallback.`,
-    );
-  }
-
   if (os === "android" || os === "ios") {
     const start = Date.now();
     window.setTimeout(() => {
