@@ -54,9 +54,8 @@ export function buildNavigationUrl(target: NavTarget, os: DeviceOS = detectOS())
     return `https://www.google.com/maps/dir/?api=1&destination=${q}&travelmode=driving`;
   }
 
-  // No coordinates — search by name
-  if (os === "ios") return `maps://?q=${search}`;
-  if (os === "android") return `geo:0,0?q=${search}`;
+  // No coordinates — search by name (free, no API key required)
+  if (os === "ios") return `https://maps.apple.com/?q=${search}`;
   return `https://www.google.com/maps/search/?api=1&query=${search}`;
 }
 
@@ -71,14 +70,6 @@ export function openNavigation(target: NavTarget): boolean {
   const os = detectOS();
   const primary = buildNavigationUrl(target, os);
   const webFallback = webFallbackUrl(target);
-
-  if (!hasCoords(target)) {
-    console.warn(
-      `[BikerHub] Coordinates missing for destination "${target.label ?? "(unnamed)"}"${
-        target.query ? ` (${target.query})` : ""
-      } — using name search fallback.`,
-    );
-  }
 
   if (os === "android" || os === "ios") {
     const start = Date.now();
