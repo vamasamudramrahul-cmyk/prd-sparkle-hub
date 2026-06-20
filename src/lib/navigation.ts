@@ -17,6 +17,8 @@ export interface NavTarget {
   lat?: number;
   lng?: number;
   label?: string;
+  /** Optional context (district, state) used to make name-based search fallback accurate. */
+  query?: string;
 }
 
 export function hasCoords(p: NavTarget): p is Required<Pick<NavTarget, "lat" | "lng">> & NavTarget {
@@ -29,50 +31,66 @@ export function hasCoords(p: NavTarget): p is Required<Pick<NavTarget, "lat" | "
  * - Android → Google Maps (geo: with google.navigation intent fallback via comgooglemaps URL)
  * - Other → Google Maps web URL
  */
-export function buildNavigationUrl(target: NavTarget, os: DeviceOS = detectOS()): string | null {
-  if (!hasCoords(target)) return null;
-  const { lat, lng, label } = target;
-  const q = `${lat},${lng}`;
-  const name = label ? encodeURIComponent(label) : "";
+function buildSearchQuery(target: NavTarget): string {
+  const parts = [target.label, target.query].filter(Boolean).join(", ");
+  return encodeURIComponent(parts || "");
+}
 
-  if (os === "ios") {
-    // Apple Maps driving directions
-    return `maps://?daddr=${q}&dirflg=d${name ? `&q=${name}` : ""}`;
+/**
+ * Build a deep link URL that opens turn-by-turn navigation on the user's device.
+ * Uses coordinates when available, otherwise falls back to a name-based search.
+ * - iOS  → Apple Maps (maps://)
+ * - Android → Google Maps (google.navigation: / geo:)
+ * - Other → Google Maps web URL
+ */
+export function buildNavigationUrl(target: NavTarget, os: DeviceOS = detectOS()): string {
+  const hasXY = hasCoords(target);
+  const search = buildSearchQuery(target);
+
+  if (hasXY) {
+    const q = `${target.lat},${target.lng}`;
+    if (os === "ios") return `maps://?daddr=${q}&dirflg=d`;
+    if (os === "android") return `google.navigation:q=${q}&mode=d`;
+    return `https://www.google.com/maps/dir/?api=1&destination=${q}&travelmode=driving`;
   }
-  if (os === "android") {
-    // Google Maps turn-by-turn navigation intent
-    return `google.navigation:q=${q}&mode=d`;
+
+  // No coordinates — search by name
+  if (os === "ios") return `maps://?q=${search}`;
+  if (os === "android") return `geo:0,0?q=${search}`;
+  return `https://www.google.com/maps/search/?api=1&query=${search}`;
+}
+
+function webFallbackUrl(target: NavTarget): string {
+  if (hasCoords(target)) {
+    return `https://www.google.com/maps/dir/?api=1&destination=${target.lat},${target.lng}&travelmode=driving`;
   }
-  // Web fallback — Google Maps directions
-  return `https://www.google.com/maps/dir/?api=1&destination=${q}${name ? `&destination_place_id=&travelmode=driving` : "&travelmode=driving"}`;
+  return `https://www.google.com/maps/search/?api=1&query=${buildSearchQuery(target)}`;
 }
 
 export function openNavigation(target: NavTarget): boolean {
-  if (!hasCoords(target)) return false;
   const os = detectOS();
   const primary = buildNavigationUrl(target, os);
-  const webFallback = `https://www.google.com/maps/dir/?api=1&destination=${target.lat},${target.lng}&travelmode=driving`;
+  const webFallback = webFallbackUrl(target);
 
-  if (!primary) {
-    window.open(webFallback, "_blank", "noopener,noreferrer");
-    return true;
+  if (!hasCoords(target)) {
+    console.warn(
+      `[BikerHub] Coordinates missing for destination "${target.label ?? "(unnamed)"}"${
+        target.query ? ` (${target.query})` : ""
+      } — using name search fallback.`,
+    );
   }
 
   if (os === "android" || os === "ios") {
-    // Try the native deep link; if the app isn't installed, fall back to web after a short delay.
     const start = Date.now();
-    const fallbackTimer = window.setTimeout(() => {
-      // If still here ~1.2s later, browser likely didn't hand off to a native app
+    window.setTimeout(() => {
       if (Date.now() - start < 2000 && document.visibilityState === "visible") {
         window.open(webFallback, "_blank", "noopener,noreferrer");
       }
     }, 1200);
 
-    // Use location.href so iOS honors the maps:// scheme
     try {
       window.location.href = primary;
     } catch {
-      window.clearTimeout(fallbackTimer);
       window.open(webFallback, "_blank", "noopener,noreferrer");
     }
     return true;

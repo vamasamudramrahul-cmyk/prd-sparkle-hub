@@ -11,6 +11,7 @@ interface PlacesListProps {
 }
 
 const PlacesList = ({ district, stateName, onBack }: PlacesListProps) => {
+  const navContext = `${district.name}, ${stateName}, India`;
   return (
     <section className="pb-20">
       <div className="container mx-auto px-4">
@@ -80,7 +81,7 @@ const PlacesList = ({ district, stateName, onBack }: PlacesListProps) => {
                 </div>
               </div>
               <div className="mt-3 flex items-center justify-end">
-                <NavigateButton place={place} />
+                <NavigateButton place={place} context={navContext} />
               </div>
             </motion.div>
           ))}

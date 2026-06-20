@@ -1,4 +1,5 @@
-import { Navigation2, MapPinOff } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { openNavigation, hasCoords } from "@/lib/navigation";
 import { PlaceData } from "@/data/bikerHubData";
@@ -6,43 +7,53 @@ import { cn } from "@/lib/utils";
 
 interface NavigateButtonProps {
   place: PlaceData;
+  /** Extra context like "District, State" used for the name-search fallback. */
+  context?: string;
   className?: string;
   size?: "sm" | "default" | "lg";
 }
 
-const NavigateButton = ({ place, className, size = "sm" }: NavigateButtonProps) => {
-  const available = hasCoords(place);
+const NavigateButton = ({ place, context, className, size = "sm" }: NavigateButtonProps) => {
+  const hasXY = hasCoords(place);
 
-  if (!available) {
-    return (
-      <div
-        className={cn(
-          "inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-muted-foreground/70",
-          className,
-        )}
-        title="Navigation unavailable for this location"
-      >
-        <MapPinOff className="w-3.5 h-3.5" />
-        Navigation unavailable
-      </div>
-    );
-  }
+  // Admin-style warning for any destination missing coordinates.
+  useEffect(() => {
+    if (!hasXY) {
+      console.warn(
+        `[BikerHub] Missing coordinates for destination: "${place.name}"${
+          context ? ` (${context})` : ""
+        }`,
+      );
+    }
+  }, [hasXY, place.name, context]);
 
   return (
-    <Button
-      type="button"
-      size={size}
-      variant="default"
-      className={cn("h-9", className)}
-      onClick={(e) => {
-        e.stopPropagation();
-        openNavigation({ lat: place.lat, lng: place.lng, label: place.name });
-      }}
-      aria-label={`Navigate to ${place.name}`}
-    >
-      <Navigation2 className="w-4 h-4" />
-      Navigate
-    </Button>
+    <div className={cn("flex flex-col items-end gap-1", className)}>
+      <Button
+        type="button"
+        size={size}
+        variant="default"
+        className="h-9"
+        onClick={(e) => {
+          e.stopPropagation();
+          openNavigation({
+            lat: place.lat,
+            lng: place.lng,
+            label: place.name,
+            query: context,
+          });
+        }}
+        aria-label={`Navigate to ${place.name}`}
+      >
+        <MapPin className="w-4 h-4" />
+        Navigate
+      </Button>
+      {!hasXY && (
+        <span className="text-[10px] uppercase tracking-wider text-muted-foreground/70">
+          Coordinates not yet available
+        </span>
+      )}
+    </div>
   );
 };
 
