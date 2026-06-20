@@ -54,9 +54,8 @@ export function buildNavigationUrl(target: NavTarget, os: DeviceOS = detectOS())
     return `https://www.google.com/maps/dir/?api=1&destination=${q}&travelmode=driving`;
   }
 
-  // No coordinates — search by name
-  if (os === "ios") return `maps://?q=${search}`;
-  if (os === "android") return `geo:0,0?q=${search}`;
+  // No coordinates — search by name (free, no API key required)
+  if (os === "ios") return `https://maps.apple.com/?q=${search}`;
   return `https://www.google.com/maps/search/?api=1&query=${search}`;
 }
 
