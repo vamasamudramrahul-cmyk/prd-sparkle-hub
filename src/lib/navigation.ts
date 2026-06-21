@@ -54,24 +54,52 @@ export function buildNavigationUrl(target: NavTarget, os: DeviceOS = detectOS())
     return `https://www.google.com/maps/dir/?api=1&destination=${q}&travelmode=driving`;
   }
 
-  // No coordinates — search by name (free, no API key required)
-  if (os === "ios") return `https://maps.apple.com/?q=${search}`;
-  return `https://www.google.com/maps/search/?api=1&query=${search}`;
+  // No coordinates — use Directions URL by name (free, no API key required)
+  if (os === "ios") return `https://maps.apple.com/?daddr=${search}&dirflg=d`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${search}&travelmode=driving`;
 }
 
 function webFallbackUrl(target: NavTarget): string {
   if (hasCoords(target)) {
     return `https://www.google.com/maps/dir/?api=1&destination=${target.lat},${target.lng}&travelmode=driving`;
   }
-  return `https://www.google.com/maps/search/?api=1&query=${buildSearchQuery(target)}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${buildSearchQuery(target)}&travelmode=driving`;
 }
 
 export function openNavigation(target: NavTarget): boolean {
   const os = detectOS();
-  const primary = buildNavigationUrl(target, os);
   const webFallback = webFallbackUrl(target);
 
-  if (os === "android" || os === "ios") {
+  if (os === "android") {
+    const search = buildSearchQuery(target);
+    // Prefer native Google Maps app via intent URL; fall back to web Directions URL.
+    const intentUrl = hasCoords(target)
+      ? `intent://maps.google.com/maps?daddr=${target.lat},${target.lng}#Intent;scheme=https;package=com.google.android.apps.maps;end`
+      : `intent://maps.google.com/maps?daddr=${search}#Intent;scheme=https;package=com.google.android.apps.maps;end`;
+
+    console.log("[BikerHub] Navigate (Android intent):", intentUrl);
+    console.log("[BikerHub] Navigate (web fallback):", webFallback);
+
+    const start = Date.now();
+    window.setTimeout(() => {
+      if (Date.now() - start < 2000 && document.visibilityState === "visible") {
+        window.open(webFallback, "_blank", "noopener,noreferrer");
+      }
+    }, 1200);
+
+    try {
+      window.location.href = intentUrl;
+    } catch {
+      window.open(webFallback, "_blank", "noopener,noreferrer");
+    }
+    return true;
+  }
+
+  if (os === "ios") {
+    const primary = buildNavigationUrl(target, os);
+    console.log("[BikerHub] Navigate (iOS):", primary);
+    console.log("[BikerHub] Navigate (web fallback):", webFallback);
+
     const start = Date.now();
     window.setTimeout(() => {
       if (Date.now() - start < 2000 && document.visibilityState === "visible") {
@@ -87,6 +115,7 @@ export function openNavigation(target: NavTarget): boolean {
     return true;
   }
 
-  window.open(primary, "_blank", "noopener,noreferrer");
+  console.log("[BikerHub] Navigate (desktop):", webFallback);
+  window.open(webFallback, "_blank", "noopener,noreferrer");
   return true;
 }
