@@ -1,0 +1,37 @@
+﻿Approved ID,Requirement,Prototype File(s),Current Status,Remaining Work
+HOME-001–010,Homepage,index.html,Present + added sections,Check against final approved copy and responsive visual QA
+SCR-001,Explore India,states.html,Partial,State cards present; verify image/copy/interaction
+SCR-002,State/District Directory,districts.html,Partial,Only sample district records; complete verified district master pending
+SCR-003,District Directory,district-directory.html,Added,District category selection wired to sample fixtures
+SCR-004,Destination Directory,destinations.html,Existing,Audit filters and cards
+SCR-005,Destination Details,destination-details.html,Existing,Verify map placeholder and verified facts
+SCR-006,Riding Clubs Directory,clubs.html,Existing,Audit filters
+SCR-007,Club Profile,club-profile.html,Existing,Audit approved sections and verified contact rules
+SCR-008,Riding Circuits Directory,circuits.html,Existing,Audit state coverage/duration/distance filters
+SCR-009,Circuit Details,circuit-details.html,Existing,Route metrics/geometry must remain unverified if missing
+SCR-010,Events Directory,events.html,Existing,Audit upcoming/past tabs and date filters
+SCR-011,Event Details,event-details.html,Existing,Audit required event sections
+SCR-012,Biker Businesses Directory,businesses.html,Existing + CTA,Links should open business details
+SCR-013,Rider Assistance,rider-assistance.html,Rebuilt,Approved information directory; no dispatch or requests
+SCR-014,Rider Stories Directory,rider-stories.html,Added,Approved sample stories only
+SCR-015,Trip Story Details,trip-story.html,Added,Renders approved fixture story by ID
+SCR-016,Submit a Trip Story,submit-trip-story.html,Added,Frontend validation only; no persistence
+SCR-017,About BikerGram,about.html,Updated,Added AP/TG scope section; review remaining copy
+SCR-018,Biker Business Details,business-details.html,Added,No map; only verified contact details
+SCR-019,Global Search Results,search.html,Added,Live results while typing; matching refinements pending
+SCR-020,Authentication,sign-in.html; sign-up.html; forgot-password.html; verify-email.html,Added preview,No provider/backend/email integration
+SCR-021,User Profile,profile.html,Added preview,Profile controls are illustrative
+SCR-025,Contact BikerGram,contact.html,Added preview,Form does not transmit
+SCR-026,Account Settings,account-settings.html,Added preview,Controls are illustrative; no persistence
+SCR-027,Notifications Centre,notifications.html,Added preview,Sample-only notifications
+SCR-033,System States,shared CSS/JS,Partial,Shared loading/empty/error components need fuller QA
+SCR-034,Legal & Policy,privacy-policy.html; terms.html; cookie-policy.html,Added placeholders,Legal review required
+SCR-035,Footer & Shared Navigation,shared across all pages,Updated,Check active states and mobile nav
+SCR-036,Responsive Design,assets/bikergram-v2.css,Updated,Browser/device QA pending
+SCR-037,Accessibility & Language,shared,Partial,Language selector present; full Telugu and WCAG audit pending
+SCR-038,Performance,shared,Partial,Lazy loading added to dynamic cards; audit remaining legacy images
+SCR-039,Business Listing Submission,business-listing-request.html,Added preview,No persistence/admin integration
+ESS-008,Account Deletion & Recovery,account-deletion.html,Added preview,30-day policy shown; backend deletion workflow absent
+SCR-044,Search Suggestions,—,Deferred,Not implemented; detailed UX deferred by user
+Admin Panel,Admin screens,Separate,Excluded,Separate specification/workstream
+India-wide expansion,Future geography,Separate,Excluded,Future scope only
